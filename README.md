@@ -34,5 +34,11 @@ Yoast SEO
 BEM、FLOUベースの記法
 SCSS（Dart Sass）
 
+【開発ツール】
+Visual Studio Code
+Prepros（ライブプレビュー、SCSSコンパイル、画像圧縮）
+FileZilla
+SourceTree
+
 【その他】
 独自ドメイン
