@@ -1,0 +1,305 @@
+@use "../global" as *;
+
+/*===================================
+ page --- トップページ
+===================================*/
+
+/*----------------------------------
+ メインヴィジュアル
+----------------------------------*/
+.mv-area {
+    position: relative;
+    margin-bottom: 165px;
+
+    @include mq(tab) {
+        margin-bottom: 214px;
+    }
+
+    @include mq(pc) {
+        margin-bottom: 220px;
+    }
+}
+
+.mv {
+    position: relative;
+    background: url("../../../assets/img/top/mv_sp.jpg") no-repeat center center / cover;
+    width: percentage(287px / $windowBaseWidthSP);
+    height: 580px;
+
+    @include mq(tab) {
+        background: url("../../../assets/img/top/mv_tab.jpg") no-repeat center center / cover;
+        width: percentage(600px / $windowBaseWidthTAB);
+        height: 890px;
+    }
+
+    @include mq(pc) {
+        background: url("../../../assets/img/top/mv.jpg") no-repeat center center / cover;
+        width: percentage(1100px / $windowBaseWidthPC);
+        height: 640px;
+    }
+}
+
+.mv__catch-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background-color: var(--color-black-01);
+    width: percentage(283px / $windowBaseWidthSP);
+    height: 667px;
+    margin-left: auto;
+
+    @include mq(tab) {
+        width: percentage(562px / $windowBaseWidthTAB);
+        height: 1024px;
+    }
+
+    @include mq(pc) {
+        width: percentage(780px / $windowBaseWidthPC);
+        height: 740px;
+    }
+}
+
+.mv__catch {
+    position: absolute;
+    top: 75%;
+    right: calc(-72px - #{$innerPaddingSp});
+    transform: translateY(-50%) translateX(0);
+    color: var(--color-white);
+    @include letterSpacing(63);
+    padding: 0 $innerPaddingSp;
+
+    @include mq(tab) {
+        top: 53%;
+        right: calc(-92px - #{$innerPadding});
+        padding: 0 $innerPadding;
+    }
+
+    @include mq(pc) {
+        top: 80%;
+        right: calc(-145px - #{$innerPadding});
+        letter-spacing: 0;
+    }
+}
+
+.mv__catch--jp {
+    @include fontSize(16);
+
+    @include mq(pc) {
+        @include fontSize(20);
+    }
+
+    span {
+        @include fontMontserratBold;
+    }
+}
+
+.mv__catch--en {
+    @include fontMontserratExtraBold;
+    @include fontSize(56);
+    @include letterSpacing(63);
+    @include lineHeight(53, 56);
+    margin-top: 14px;
+
+    @include mq(pc) {
+        @include fontSize(72);
+        letter-spacing: 0;
+        @include lineHeight(86, 72);
+        margin-top: 3px;
+    }
+}
+
+/*----------------------------------
+ ABOUT US
+----------------------------------*/
+.about {
+
+    .l-inner {
+        background: url("../../../assets/img/top/about_bg_sp.jpg") no-repeat center center / cover;
+        padding: 50px 15px;
+
+        @include mq(tab) {
+            background: url("../../../assets/img/top/about_bg_tab.jpg") no-repeat center center / cover;
+            padding: 60px 50px;
+        }
+
+        @include mq(pc) {
+            background: url("../../../assets/img/top/about_bg.jpg") no-repeat center center / cover;
+            max-width: 1100px;
+            padding: 110px 50px;
+        }
+    }
+
+    .c-sec__title {
+        margin-bottom: 15px;
+
+        @include mq(tab) {
+            margin-bottom: 12px;
+        }
+
+        @include mq(pc) {
+            margin-bottom: 18px;
+        }
+    }
+
+    .c-btn-base {
+        margin: 24px auto 0;
+
+        @include mq(tab) {
+            margin-top: 20px;
+        }
+
+        @include mq(pc) {
+            margin-top: 24px;
+        }
+    }
+}
+
+.about-content {
+    background-color: rgba(var(--color-white-rgb), 0.95);
+    max-width: 590px;
+    padding: 38px 30px 50px;
+
+    @include mq(tab) {
+        margin: 0 auto;
+        padding: 28px 30px 40px;
+    }
+
+    @include mq(pc) {
+        padding: 34px 30px 50px;
+    }
+}
+
+/*----------------------------------
+ WORKS、CULTURE
+----------------------------------*/
+.sec-wrap {
+    background-color: var(--color-gray-01);
+    padding-top: 27px;
+    padding-bottom: 40px;
+
+    @include mq(tab) {
+        padding-top: 47px;
+    }
+
+    @include mq(pc) {
+        margin-top: -100px;
+        padding-top: 170px;
+        padding-bottom: 60px;
+    }
+
+    .l-inner {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        gap: 32px 0;
+
+        @include mq(pc) {
+            grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+            gap: 0 60px;
+        }
+    }
+
+    .c-sec__title {
+        margin-bottom: 19px;
+
+        @include mq(tab) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.sec-wrap-content {
+
+    .c-btn-base {
+        margin: 25px auto 0;
+    }
+}
+
+.sec-wrap__img {
+    margin-top: 15px;
+    margin-bottom: 20px;
+
+    img {
+        width: 100%;
+    }
+}
+
+/*----------------------------------
+ LATEST TOPICS
+----------------------------------*/
+.topics {
+    padding-top: 30px;
+
+    @include mq(pc) {
+        padding-top: 45px;
+    }
+
+    .l-inner {
+
+        @include mq(pc) {
+            width: 800px;
+            margin: 0 auto;
+        }
+    }
+
+    .c-sec__title {
+        margin-bottom: 12px;
+
+        @include mq(tab) {
+            margin-bottom: 5px;
+        }
+
+        @include mq(pc) {
+            margin-bottom: 0;
+        }
+    }
+
+    .c-btn-base {
+        margin: 30px auto 0;
+
+        @include mq(pc) {
+            margin-left: auto;
+        }
+    }
+}
+
+.topics-list {
+    margin-top: 20px;
+}
+
+.topics__item {
+    display: block;
+    @include fontMontserratBold;
+    border-bottom: 1px solid var(--color-gray-03);
+    padding-bottom: 7px;
+
+    &:nth-child(n + 2) {
+        margin-top: 11px;
+
+        @include mq(tab) {
+            margin-top: 17px;
+        }
+    }
+}
+
+.topics__date {
+    color: var(--color-gray-02);
+    @include fontSize(10);
+    @include letterSpacing(15);
+
+    @include mq(tab) {
+        @include fontSize(12);
+    }
+}
+
+.topics__title {
+    @include fontSize(12);
+    @include letterSpacing(68);
+    @include lineHeight(20, 12);
+
+    @include mq(tab) {
+        @include fontSize(14);
+        @include letterSpacing(4);
+    }
+}

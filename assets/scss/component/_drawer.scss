@@ -1,0 +1,170 @@
+@use "../global" as *;
+
+.c-drawer-btn {
+	position: relative;
+	z-index: 1002;
+	width: 61px;
+	height: 13px;
+	margin-left: auto;
+	transition: $transition;
+	cursor: pointer;
+
+	span {
+		position: absolute;
+		left: 0;
+		background: var(--color-white);
+		border-radius: 50px;
+		width: 22px;
+		height: 2px;
+		transition: $transition;
+
+		&:nth-of-type(1) {
+			top: 0;
+		}
+
+		&:nth-of-type(2) {
+			top: 4px;
+		}
+
+		&:nth-of-type(3) {
+			top: 8px;
+		}
+	}
+
+	/* ------ オープン時 ☓ボタン ------ */
+	&.active span {
+		background: var(--color-white);
+	}
+
+	&.active span:nth-of-type(1) {
+		transform: translateY(3px) translateX(0) rotate(-30deg);
+		transition: $transition;
+	}
+
+	/* 真ん中の棒は非表示 */
+	&.active span:nth-of-type(2) {
+		opacity: 0;
+	}
+
+	&.active span:nth-of-type(3) {
+		transform: translateY(-5px) translateX(0) rotate(30deg);
+		transition: $transition;
+	}
+}
+
+.c-drawer-btn__txt {
+	position: absolute;
+	top: 43%;
+	right: 0;
+	transform: translateY(-50%) translateX(0);
+	color: var(--color-white);
+	@include fontMontserratExtraBold;
+	@include fontSize(10);
+	@include letterSpacing(5);
+}
+
+/* メニュー */
+.c-drawer-menu {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1001;
+	background-color: rgba(var(--color-black-01-rgb), 0.95);
+	width: percentage(300px / $windowBaseWidthSP);
+	max-width: 520px;
+	transform: translateY(0) translateX(100%);
+	transition: $transition;
+
+	@include mq(tab) {
+		width: percentage(520px / $windowBaseWidthTAB);
+	}
+
+	@include mq(pc) {
+		width: percentage(520px / $windowBaseWidthPC);
+	}
+
+	/* ------ オープン時 ------ */
+	&.open {
+		transform: translateY(0) translateX(0);
+		transition: $transition;
+	}
+}
+
+.c-drawer-menu__body {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto;
+	place-content: center;
+	place-items: center;
+	height: 100vh;
+	padding-top: 18px;
+	padding-right: 10px;
+	padding-bottom: 90px;
+	padding-left: 20px;
+}
+
+.c-drawer-menu__logo {
+	margin-bottom: 40px;
+}
+
+.c-drawer-menu__list {
+	display: grid;
+	place-content: center;
+	text-align: center;
+	overflow-y: scroll;
+	width: 100%;
+	height: 100%;
+
+	/* ------ スクロールバー有効のまま非表示 ------ */
+	/* Chrome, Safari */
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	/* IE, Edge */
+	-ms-overflow-style: none;
+
+	/* Firefox */
+	scrollbar-width: none;
+
+	li {
+
+		&:nth-child(n + 2) {
+			margin-top: 30px;
+		}
+	}
+
+	a {
+		display: block;
+		color: var(--color-white);
+		@include fontMontserratExtraBold;
+		@include fontSize(20);
+		@include letterSpacing(68);
+		text-align: center;
+	}
+}
+
+.c-drawer-menu__name {
+	@include fontSize(15);
+
+}
+
+.c-drawer-menu__name,
+.c-drawer-menu-last__name {
+	position: relative;
+	display: block;
+	color: var(--color-white);
+	font-feature-settings: "palt";
+	padding: 14px 10px;
+}
+
+/* プライバシーポリシー */
+.c-drawer-menu-last__item {
+	margin-top: 30px;
+}
+
+.c-drawer-menu-last__name {
+	@include fontSize(13);
+	padding-top: 0;
+	padding-bottom: 0;
+}

@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/*===================================
+ TOPICS - 全ページ共通
+===================================*/
+.topics-list {
+  max-width: 700px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1025px) {
+  .topics-list {
+    margin-top: 72px;
+  }
+}
+
+.topics__item {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 7px;
+}
+.topics__item:nth-child(n+2) {
+  margin-top: 11px;
+}
+@media screen and (min-width: 600px) {
+  .topics__item:nth-child(n+2) {
+    margin-top: 17px;
+  }
+}
+.topics__item .topics__date {
+  color: #cecece;
+  font-size: 1rem;
+  letter-spacing: 0.015em;
+}
+.topics__item .topics__title {
+  font-size: 1.2rem;
+  letter-spacing: 0.068em;
+  line-height: 1.6666666667;
+}
+@media screen and (min-width: 600px) {
+  .topics__item .topics__title {
+    font-size: 1.4rem;
+    letter-spacing: 0.004em;
+  }
+}
+
+/* ------ カテゴリ ------ */
+.topics-cat {
+  margin-left: 10px;
+}
+/*# sourceMappingURL=article_topics.css.map */

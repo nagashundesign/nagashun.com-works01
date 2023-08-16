@@ -1,0 +1,23 @@
+//------------------------
+// px → vw 自動変換
+//------------------------
+//SP
+$vwSP: 375; //基準
+
+@function vw-sp($num, $width: $vwSP) {
+  @return (1vw * $num / $width * 100);
+}
+
+//タブレット
+$vwTAB: 768; //基準
+
+@function vw-tab($num, $width: $vwTAB) {
+  @return (1vw * $num / $width * 100);
+}
+
+//PC
+$vwPC: 1440; //基準
+
+@function vw-pc($num, $width: $vwPC) {
+  @return (1vw * $num / $width * 100);
+}

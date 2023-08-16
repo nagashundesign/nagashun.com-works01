@@ -1,0 +1,111 @@
+@use "../global" as *;
+
+/*===================================
+ 全体
+===================================*/
+html {
+	font-size: 62.5%;
+}
+
+body {
+	position: relative;
+	color: var(--text-color-main);
+	@include mainFont;
+	font-size: $fontSizeMainSp;
+	letter-spacing: 0;
+	line-height: $lineHeightMain;
+
+	@include mq(tab) {
+		font-size: $fontSizeMain;
+	}
+
+	/* ------ ドロワーメニュー展開時は画面スクロール禁止 ------ */
+	&.js-fixed {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+a {
+	color: var(--text-color-main);
+	;
+	transition: $transition;
+	text-decoration: none;
+
+	@media (hover: hover) {
+
+		&:hover {
+			text-decoration: none;
+			opacity: $opacity;
+		}
+	}
+
+	@media (hover: none) {
+
+		&:active {
+			text-decoration: none;
+			opacity: $opacity;
+		}
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+main {
+	position: relative;
+}
+
+.wrapper {
+	position: relative;
+	overflow: hidden;
+}
+
+*:focus {
+	outline: none;
+}
+
+/* 電話番号リンク（PC無効） */
+@include mq(pc) {
+	a[href*="tel:"] {
+		pointer-events: none;
+		cursor: default;
+		text-decoration: none;
+	}
+}
+
+/*===================================
+ page --- 404
+===================================*/
+.notfound {
+	margin-bottom: 100px;
+
+	.l-lower-mv-area {
+		margin-bottom: 50px;
+
+		@include mq(tab) {
+			margin-bottom: 0;
+		}
+
+		@include mq(pc) {
+			margin-bottom: 100px;
+		}
+	}
+
+	.l-lower-mv__title--en {
+		line-height: 1.2;
+		margin-bottom: 10px;
+	}
+
+	.l-lower-mv__title-bg {
+		width: 100%;
+		height: 400px;
+	}
+
+	.c-btn-base {
+		margin-top: 50px;
+	}
+}

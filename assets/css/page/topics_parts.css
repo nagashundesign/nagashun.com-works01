@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/*===================================
+ TOPICS - 全ページ共通
+===================================*/
+.topics-cat {
+  background-color: #333;
+  color: #fff;
+  font-family: "Noto Sans JP", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: center;
+  margin-left: 10px;
+  padding: 3px 5px;
+}

@@ -1,0 +1,32 @@
+// width
+$windowMaxWidth: 1440px; //ウィンドウ横幅の最大値
+
+$windowBaseWidthPC: 1440px; //パソコンの基準横幅
+$windowBaseWidthTAB: 768px; //タブレットの基準横幅
+$windowBaseWidthSP: 375px; //スマホの基準横幅
+
+// header
+$headerHeight: 89px;
+$headerHeightSp: 61px;
+
+//コンテンツの基本の横幅
+$contentsBaseWidth: 1100px;
+
+//.l-inner 基本の左右padding
+$innerPadding: 30px;
+$innerPaddingSp: 15px;
+
+// font
+$fontSizeMain: 1.6rem;
+$fontSizeMainSp: 1.4rem;
+
+$letterSpacingMain: 0;
+$letterSpacingMainSp: 0;
+
+$lineHeightMain: 2;
+
+// opacity
+$opacity: 0.7;
+
+// transition
+$transition: 0.3s ease-out;

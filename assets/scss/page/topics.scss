@@ -1,0 +1,109 @@
+@use "../global" as *;
+
+/*===================================
+ page --- TOPICS
+===================================*/
+
+/*----------------------------------
+ メインヴィジュアル
+----------------------------------*/
+.l-lower-mv {
+    background: url("../../../assets/img/topics/mv_sp.jpg") no-repeat center center / cover;
+
+    @include mq(tab) {
+        background: url("../../../assets/img/topics/mv_tab.jpg") no-repeat center center / cover;
+    }
+
+    @include mq(pc) {
+        background: url("../../../assets/img/topics/mv.jpg") no-repeat center center / cover;
+    }
+}
+
+/*----------------------------------
+ 記事一覧
+----------------------------------*/
+.cat-list {
+
+    .topics-cat {
+        margin-left: 0;
+    }
+}
+
+.topics-list {
+    max-width: 700px;
+    margin: 0 auto;
+
+    @include mq(pc) {
+        margin-top: 72px;
+    }
+}
+
+.topics__item {
+    display: block;
+    @include fontMontserratBold;
+    border-bottom: 1px solid var(--color-gray-03);
+    padding-bottom: 7px;
+
+    &:nth-child(n + 2) {
+        margin-top: 11px;
+
+        @include mq(tab) {
+            margin-top: 17px;
+        }
+    }
+
+    .topics__date {
+        color: var(--color-gray-02);
+        @include fontSize(10);
+        @include letterSpacing(15);
+    }
+
+    .topics__title {
+        @include fontSize(12);
+        @include letterSpacing(68);
+        @include lineHeight(20, 12);
+
+        @include mq(tab) {
+            @include fontSize(14);
+            @include letterSpacing(4);
+        }
+    }
+}
+
+/*----------------------------------
+ 記事
+----------------------------------*/
+.topics {
+    padding-bottom: 80px;
+
+    @include mq(tab) {
+        margin-top: 70px;
+    }
+
+    @include mq(pc) {
+        padding-bottom: 120px;
+    }
+}
+
+.topics-info {
+    border-bottom: 1px solid var(--color-gray-02);
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+
+    .topics__date {
+        @include fontSize(10);
+    }
+}
+
+.topics__title {
+    @include fontSize(30);
+    font-weight: 700;
+}
+
+.topics-content {
+
+    p,
+    img {
+        margin-bottom: 20px;
+    }
+}

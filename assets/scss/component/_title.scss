@@ -1,0 +1,14 @@
+@use "../global" as *;
+
+/*----------------------------------
+ 各タイトル、見出し
+----------------------------------*/
+.c-sec__title {
+    @include fontMontserratExtraBold;
+    @include fontSize(28);
+    @include letterSpacing(68);
+
+    @include mq(tab) {
+        @include fontSize(32);
+    }
+}

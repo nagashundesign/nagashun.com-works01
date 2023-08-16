@@ -1,0 +1,22 @@
+@use "../global" as *;
+
+/*----------------------------------
+ inner（ベース）
+----------------------------------*/
+/* ------ .l-inner 共通 ------ */
+div[class^="l-inner"] {
+	position: relative;
+	height: 100%;
+	padding: 0 $innerPaddingSp;
+
+	@include mq(tab) {
+		max-width: calc((#{$contentsBaseWidth}) + (#{$innerPadding} * 2));
+		padding: 0 $innerPadding;
+	}
+}
+
+/* ------ .l-inner 個別 ------ */
+.l-inner {
+	width: 100%;
+	margin: 0 auto;
+}

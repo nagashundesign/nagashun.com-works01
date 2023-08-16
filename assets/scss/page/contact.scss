@@ -1,0 +1,427 @@
+@use "../global" as *;
+
+/*===================================
+ page --- CONTACT
+===================================*/
+
+/*----------------------------------
+ メインヴィジュアル
+----------------------------------*/
+.l-lower-mv-area {
+    margin-bottom: 170px;
+
+    @include mq(tab) {
+        margin-bottom: 220px;
+    }
+
+    @include mq(pc) {
+        margin-bottom: 184px;
+    }
+}
+
+.l-lower-mv {
+    background: url("../../../assets/img/contact/mv_sp.jpg") no-repeat center center / cover;
+    height: 270px;
+
+    @include mq(tab) {
+        background: url("../../../assets/img/contact/mv_tab.jpg") no-repeat center center / cover;
+        height: 529px;
+    }
+
+    @include mq(pc) {
+        background: url("../../../assets/img/contact/mv.jpg") no-repeat center center / cover;
+        height: 387px;
+    }
+}
+
+.l-lower-mv__title-bg {
+    height: 365px;
+
+    @include mq(tab) {
+        height: 615px;
+    }
+
+    @include mq(pc) {
+        height: 451px;
+    }
+}
+
+.l-lower-mv__title {
+    top: 66%;
+
+    @include mq(tab) {
+        top: 34%;
+        right: calc(-133px - #{$innerPadding});
+    }
+
+    @include mq(pc) {
+        top: 56%;
+        right: calc(-195px - #{$innerPadding});
+    }
+}
+
+.l-lower-mv__title--jp {
+    text-align: right;
+
+    @include mq(tab) {
+        text-align: left;
+    }
+}
+
+/*----------------------------------
+ フォーム
+----------------------------------*/
+.contact {
+    padding-bottom: 80px;
+
+    @include mq(pc) {
+        padding-bottom: 120px;
+    }
+
+    .l-inner {
+        @include mq(tab) {
+            max-width: calc(668px + (#{$innerPadding} * 2));
+        }
+
+        @include mq(pc) {
+            max-width: calc(700px + (#{$innerPadding} * 2));
+        }
+    }
+}
+
+.contact__intro {
+    @include letterSpacing(4);
+    @include lineHeight(24, 14);
+
+    @include mq(tab) {
+        @include lineHeight(24, 16);
+    }
+}
+
+.form-wrap {
+    margin-top: 10px;
+}
+
+.form__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &:nth-of-type(n + 2) {
+        margin-top: 35px;
+
+        @include mq(tab) {
+            margin-top: 37px;
+        }
+
+        @include mq(pc) {
+            margin-top: 40px;
+        }
+    }
+
+    label {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    input:not([type=radio], [type=checkbox]),
+    textarea,
+    .form__privacy {
+        border: 1px solid var(--text-color-main);
+        width: 100%;
+        padding: 9px 10px;
+
+        @include mq(tab) {
+            padding: 7px 10px;
+        }
+
+        @include mq(pc) {
+            padding: 3px 10px;
+        }
+    }
+
+    textarea {
+        resize: none;
+        height: 210px;
+
+        @include mq(tab) {
+            height: 180px;
+        }
+
+        @include mq(pc) {
+            height: 212px;
+        }
+    }
+
+    /* ------ ラジオボタン ------ */
+    input[type="radio"] {
+        appearance: none;
+        display: none;
+        position: absolute;
+
+        &+span {
+            position: relative;
+            display: inline-block;
+            padding-left: 40px;
+            cursor: pointer;
+        }
+
+        &+span::before,
+        &+span::after {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            display: block;
+            content: "";
+            border-radius: 50%;
+            margin: auto 10px auto 0;
+        }
+
+        /* 外側の円 */
+        &+span::before {
+            left: 9px;
+            background: var(--color-white);
+            border: 1px solid var(--text-color-main);
+            width: 20px;
+            height: 20px;
+        }
+
+        /* 内側の円 */
+        &+span::after {
+            left: 13px;
+            width: 12px;
+            height: 12px;
+            opacity: 0;
+        }
+
+        /* チェック時の外側の円 */
+        &:checked+span::before {
+            border: 1px solid var(--text-color-main);
+        }
+
+        /* チェック時の内側の円 */
+        &:checked+span::after {
+            background: var(--text-color-main);
+            opacity: 1;
+        }
+    }
+
+    /* 必須 */
+    .required {
+        display: inline-block;
+        background-color: var(--text-color-main);
+        color: var(--color-white);
+        @include fontSize(12);
+        font-weight: 700;
+        @include letterSpacing(4);
+        line-height: 1;
+        text-align: center;
+        margin: -5px 0 0 10px;
+        padding: 3px 5px;
+    }
+}
+
+.form-label {
+    @include fontSize(16);
+    font-weight: 700;
+    @include letterSpacing(4);
+    margin-bottom: 7px;
+}
+
+/* 入力欄などのform関連タグを囲むclass */
+.form-parts {
+    width: 100%;
+}
+
+.form__head {
+    @include fontMontserratExtraBold;
+    @include fontSize(16);
+    @include letterSpacing(4);
+}
+
+/* ------ PRIVACY POLICY ------ */
+.form__privacy {
+    overflow-y: scroll;
+    height: 226px;
+
+    @include mq(pc) {
+        height: 252px;
+    }
+}
+
+.form__privacy-item {
+    @include fontSize(14);
+    @include lineHeight(24, 14);
+    @include letterSpacing(4);
+
+    @include mq(tab) {
+        @include fontSize(16);
+        @include lineHeight(24, 16);
+    }
+
+    &:nth-child(n + 2) {
+        margin-top: 20px;
+    }
+}
+
+/* ------ 同意チェック ------ */
+.form-acceptance {
+    display: grid;
+    place-items: center;
+    gap: 10px;
+    @include fontSize(14);
+    @include lineHeight(24, 14);
+    @include letterSpacing(4);
+
+    @include mq(tab) {
+        @include fontSize(16);
+        @include lineHeight(24, 16);
+    }
+
+    .wpcf7-list-item {
+        position: relative;
+        margin: 0;
+    }
+}
+
+.form-notes {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* ------ 送信ボタン ------ */
+.form__submit {
+    margin-top: 40px;
+
+    .c-btn-base {
+        margin: 0 auto;
+    }
+
+    .wpcf7-submit {
+        @include mainFont;
+        @include fontSize(14);
+        font-weight: 700;
+        @include letterSpacing(15);
+        @include lineHeight(32, 14);
+    }
+}
+
+/*----------------------------------
+ Contact Form 7
+----------------------------------*/
+/* ------ ラジオボタン ------ */
+
+.wpcf7-radio {
+    display: inline-block;
+    margin-top: 12px;
+
+    @include mq(tab) {
+        margin-top: 0;
+    }
+
+    .wpcf7-list-item {
+        display: block;
+        margin-left: 0;
+
+        @include mq(tab) {
+            display: inline-block;
+        }
+
+        &:nth-child(n + 2) {
+            margin-top: 10px;
+
+            @include mq(tab) {
+                margin-top: 0;
+                margin-left: 40px;
+            }
+        }
+
+        &.first {
+            margin-left: 0;
+        }
+    }
+}
+
+/* ------ チェックボックス ------ */
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.wpcf7-checkbox {
+    display: flex;
+}
+
+.wpcf7-list-item-label {
+    @include fontSize(14);
+    @include letterSpacing(4);
+    @include lineHeight(24, 14);
+    cursor: pointer;
+
+    @include mq(tab) {
+        @include fontSize(16);
+        @include lineHeight(24, 16);
+    }
+}
+
+.wpcf7-list-item-label {
+
+    /* チェックボックスの枠 */
+    &::before {
+        position: relative;
+        top: -2px;
+        display: inline-block;
+        content: "";
+        border: 1px solid var(--text-color-main);
+        vertical-align: middle;
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+        cursor: pointer;
+
+        @include mq(tab) {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+input[type="checkbox"] {
+
+    /* チェック時 */
+    &:checked+.wpcf7-list-item-label {
+
+        /* チェックアイコン */
+        &::after {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            display: block;
+            content: "";
+            border-bottom: 3px solid var(--text-color-main);
+            border-left: 3px solid var(--text-color-main);
+            width: 20px;
+            height: 10px;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+/* ------ ローディングアイコン ------ */
+.wpcf7-spinner {
+    display: none;
+}
+
+/*----------------------------------
+ 送信完了ページ
+----------------------------------*/
+.contact-thanks {
+
+    .c-btn-base {
+        margin-top: 120px;
+    }
+}

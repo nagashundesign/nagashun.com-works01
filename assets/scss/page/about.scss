@@ -1,0 +1,239 @@
+@use "../global" as *;
+
+/*===================================
+ page --- ABOUT US
+===================================*/
+
+/*----------------------------------
+ メインヴィジュアル
+----------------------------------*/
+.l-lower-mv {
+    background: url("../../../assets/img/about/mv_sp.jpg") no-repeat center center / cover;
+
+    @include mq(tab) {
+        background: url("../../../assets/img/about/mv_tab.jpg") no-repeat center center / cover;
+    }
+
+    @include mq(pc) {
+        background: url("../../../assets/img/about/mv.jpg") no-repeat center center / cover;
+    }
+}
+
+.vision {
+
+    @include mq(tab) {
+        padding: 0 15.6%;
+    }
+
+    @include mq(pc) {
+        padding: 0 25.4%;
+    }
+
+    .c-sec__title {
+
+        @include mq(sp) {
+            @include fontSize(32);
+            margin-bottom: 11px;
+        }
+
+        @include mq(tab) {
+            margin-bottom: 4px;
+        }
+    }
+}
+
+.vision__head {
+    @include fontSize(24);
+    @include letterSpacing(0);
+
+    @include mq(tab) {
+        @include letterSpacing(5);
+    }
+}
+
+.vision-wrap {
+    @include fontSize(14);
+    font-weight: 700;
+    margin-top: 20px;
+
+    @include mq(tab) {
+        margin-top: 19px;
+    }
+
+    @include mq(pc) {
+        @include fontSize(16);
+        margin-top: 15px;
+    }
+
+    p {
+
+        &:nth-of-type(n + 2) {
+            margin-top: 28px;
+
+            @include mq(pc) {
+                margin-top: 32px;
+            }
+        }
+    }
+}
+
+/*----------------------------------
+ CEO MESSAGE
+----------------------------------*/
+.message {
+    margin-top: 210px;
+
+    @include mq(tab) {
+        margin-top: 210px;
+    }
+
+    @include mq(pc) {
+        margin-top: 270px;
+    }
+
+    .c-sec__title {
+        @include fontSize(31);
+        @include lineHeight(39, 31);
+        margin-bottom: 25px;
+
+        @include mq(tab) {
+            @include fontSize(32);
+            @include lineHeight(39, 32);
+            margin-bottom: 28px;
+        }
+
+        @include mq(pc) {
+            margin-bottom: 26px;
+        }
+    }
+}
+
+.message-wrap {
+    background-color: var(--color-gray-01);
+    @include fontSize(14);
+    font-weight: 700;
+    padding: 127px 8.12% 77px;
+
+    @include mq(tab) {
+        @include fontSize(16);
+        @include lineHeight(28, 16);
+        width: 69.77%;
+        margin-left: auto;
+        padding: 109px 5.65% 96px;
+    }
+
+    @include mq(pc) {
+        @include lineHeight(32, 16);
+        width: 70%;
+        margin-top: 15px;
+        padding: 120px 16.82% 90px;
+    }
+
+    p {
+
+        &:nth-of-type(n + 2) {
+            margin-top: 28px;
+
+            @include mq(tab) {
+                margin-top: 27px;
+            }
+
+            @include mq(pc) {
+                margin-top: 32px;
+            }
+        }
+    }
+}
+
+.message__img {
+    position: absolute;
+    top: -128px;
+    left: 0;
+
+    @include mq(tab) {
+        top: -130px;
+        left: $innerPadding;
+    }
+
+    @include mq(pc) {
+        top: -144px;
+    }
+}
+
+/*----------------------------------
+ COMPANY
+----------------------------------*/
+.company {
+    margin-top: 67px;
+
+    @include mq(tab) {
+        margin-top: 70px;
+    }
+
+    @include mq(pc) {
+        margin-top: 110px;
+    }
+
+    .c-sec__title {
+        @include fontSize(32);
+    }
+}
+
+.company-wrap {
+    border-top: 1px solid var(--color-gray-03);
+    margin-top: 18px;
+
+    @include mq(tab) {
+        margin-top: 16px;
+    }
+
+    dl {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0 20px;
+        border-bottom: 1px solid var(--color-gray-03);
+        @include letterSpacing(4);
+        padding: 15px 0;
+
+        @include mq(tab) {
+            padding: 11px 0;
+        }
+    }
+
+    dt {
+        font-weight: 700;
+        min-width: calc(163px - 20px);
+
+        @include mq(tab) {
+            min-width: calc(144px - 20px);
+        }
+    }
+}
+
+.company-wrap-inner {
+
+    @include mq(tab) {
+        width: percentage(678px / 708px);
+        margin-left: auto;
+    }
+
+    @include mq(pc) {
+        width: percentage(800px / $contentsBaseWidth);
+    }
+}
+
+.company-map {
+    margin-top: 40px;
+
+    iframe {
+        width: 100%;
+
+        @include mq(tab) {
+            height: 230px;
+        }
+
+        @include mq(pc) {
+            height: 360px;
+        }
+    }
+}

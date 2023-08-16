@@ -1,0 +1,28 @@
+@use "../global" as *;
+
+/*----------------------------------
+ デバイス
+----------------------------------*/
+/* SP、TABのみ */
+.u-sp-only {
+	display: block;
+
+	@include mq(tab) {
+		display: none;
+	}
+}
+
+.u-pc-only {
+	display: none;
+
+	@include mq(tab) {
+		display: block;
+	}
+}
+
+/*----------------------------------
+ アクション無効
+----------------------------------*/
+.u-no-events {
+	pointer-events: none;
+}

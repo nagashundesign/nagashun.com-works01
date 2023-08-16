@@ -1,0 +1,114 @@
+@use "../global" as *;
+
+/*===================================
+ page --- 下層ページ共通
+===================================*/
+
+/*----------------------------------
+ メインヴィジュアル
+----------------------------------*/
+.l-lower-mv-area {
+	position: relative;
+	margin-bottom: 130px;
+
+	@include mq(tab) {
+		margin-bottom: 155px;
+	}
+
+	@include mq(pc) {
+		margin-bottom: 185px;
+	}
+}
+
+.l-lower-mv {
+	// 画像は各ページのscssファイルで指定
+	position: relative;
+	width: percentage(287px / $windowBaseWidthSP);
+	height: 387px;
+
+	@include mq(tab) {
+		width: percentage(587px / $windowBaseWidthTAB);
+		height: 529px;
+	}
+
+	@include mq(pc) {
+		width: percentage($contentsBaseWidth / $windowBaseWidthPC);
+		height: 387px;
+	}
+}
+
+.l-lower-mv__title-bg {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: -1;
+	background-color: var(--color-black-01);
+	width: percentage(198px / $windowBaseWidthSP);
+	height: 449px;
+	margin-left: auto;
+
+	@include mq(tab) {
+		width: percentage(406px / $windowBaseWidthTAB);
+		height: 615px;
+	}
+
+	@include mq(pc) {
+		width: percentage(780px / $windowBaseWidthPC);
+		height: 464px;
+	}
+}
+
+.l-lower-mv__title {
+	position: absolute;
+	top: 51%;
+	right: calc(-59px - #{$innerPaddingSp});
+	transform: translateY(-50%) translateX(0);
+	color: var(--color-white);
+	padding: 0 $innerPaddingSp;
+
+	@include mq(tab) {
+		top: 50.8%;
+		right: calc(-86px - #{$innerPadding});
+		padding: 0 $innerPadding;
+	}
+
+	@include mq(pc) {
+		top: 57%;
+		right: calc(-175px - #{$innerPadding});
+	}
+}
+
+.l-lower-mv__title--jp {
+	position: relative;
+	top: -12px;
+	@include fontSize(16);
+	@include letterSpacing(0);
+
+	@include mq(tab) {
+		top: -12px;
+		@include letterSpacing(5);
+	}
+
+	@include mq(pc) {
+		top: -4px;
+		@include fontSize(20);
+	}
+}
+
+.l-lower-mv__title--en {
+	@include fontMontserratExtraBold;
+	@include fontSize(52);
+	@include letterSpacing(0);
+	@include lineHeight(86, 52);
+
+	@include mq(tab) {
+		@include fontSize(52);
+		@include letterSpacing(63);
+		@include lineHeight(86, 52);
+	}
+
+	@include mq(pc) {
+		@include fontSize(72);
+		@include lineHeight(86, 72);
+	}
+}

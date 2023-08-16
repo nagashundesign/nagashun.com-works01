@@ -1,0 +1,66 @@
+@use "color" as *;
+
+//------------------------
+// メディアクエリ
+//------------------------
+$breakpoints: (
+	"sp": "screen and (max-width: 599px)",
+	"tab": "screen and (min-width: 600px)",
+	"pc": "screen and (min-width: 1025px)",
+	) !default;
+
+@mixin mq($breakpoint: sp) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+@mixin mq($breakpoint: tab) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+@mixin mq($breakpoint: pc) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+//------------------------
+// font-size（自動でremに変換）
+//------------------------
+// @include fontSize(15)
+// 使用方法：カッコ内にフォントサイズ（px）を入れる
+// 2倍のデザインデータは半分の数値を入れる
+@mixin fontSize($size) {
+	font-size: ($size / 10)+rem;
+}
+
+//------------------------
+// letter-spacing
+//------------------------
+// @include letterSpacing(40);
+// 使用方法：カッコ内に「トラッキングの数値（単位なし）を入れる」を入れる
+@mixin letterSpacing($ls) {
+	letter-spacing: ($ls / 1000) + em;
+}
+
+//------------------------
+// line-height（
+//------------------------
+// @include lineHeight(30, 20);
+// 使用方法：カッコ内に「行送り, フォントサイズ（px）」を入れる
+// 2倍のデザインデータは半分にしない
+@mixin lineHeight($lh, $fontSize) {
+	line-height: ($lh / $fontSize
+	);
+}
+
+//------------------------
+// 2行目以降インデント
+//------------------------
+@mixin indent {
+	text-indent: -1em;
+	padding-left: 1em;
+}

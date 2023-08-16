@@ -1,0 +1,16 @@
+@use "../global" as *;
+
+footer {
+    background-color: var(--color-black-03);
+    padding: 9px 0;
+}
+
+.l-footer-copyright {
+    display: block;
+    color: var(--color-white);
+    @include fontMontserratMedium;
+    @include fontSize(10);
+    @include lineHeight(32, 10);
+    @include letterSpacing(15);
+    text-align: center;
+}

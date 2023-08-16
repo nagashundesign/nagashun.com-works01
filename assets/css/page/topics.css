@@ -1,0 +1,119 @@
+@charset "UTF-8";
+:root {
+  --text-color-main: #333;
+  --color-white: #fff;
+  --color-white-rgb: 255, 255, 255;
+  --color-black-01: #222;
+  --color-black-01-rgb: 34, 34, 34;
+  --color-black-02: #000;
+  --color-black-03: #525252;
+  --color-gray-01: #f0f0f0;
+  --color-gray-02: #cecece;
+  --color-gray-03: #ddd;
+}
+
+/*===================================
+ page --- TOPICS
+===================================*/
+/*----------------------------------
+ メインヴィジュアル
+----------------------------------*/
+.l-lower-mv {
+  background: url("../../../assets/img/topics/mv_sp.jpg") no-repeat center center/cover;
+}
+@media screen and (min-width: 600px) {
+  .l-lower-mv {
+    background: url("../../../assets/img/topics/mv_tab.jpg") no-repeat center center/cover;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .l-lower-mv {
+    background: url("../../../assets/img/topics/mv.jpg") no-repeat center center/cover;
+  }
+}
+
+/*----------------------------------
+ 記事一覧
+----------------------------------*/
+.cat-list .topics-cat {
+  margin-left: 0;
+}
+
+.topics-list {
+  max-width: 700px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1025px) {
+  .topics-list {
+    margin-top: 72px;
+  }
+}
+
+.topics__item {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  border-bottom: 1px solid var(--color-gray-03);
+  padding-bottom: 7px;
+}
+.topics__item:nth-child(n+2) {
+  margin-top: 11px;
+}
+@media screen and (min-width: 600px) {
+  .topics__item:nth-child(n+2) {
+    margin-top: 17px;
+  }
+}
+.topics__item .topics__date {
+  color: var(--color-gray-02);
+  font-size: 1rem;
+  letter-spacing: 0.015em;
+}
+.topics__item .topics__title {
+  font-size: 1.2rem;
+  letter-spacing: 0.068em;
+  line-height: 1.6666666667;
+}
+@media screen and (min-width: 600px) {
+  .topics__item .topics__title {
+    font-size: 1.4rem;
+    letter-spacing: 0.004em;
+  }
+}
+
+/*----------------------------------
+ 記事
+----------------------------------*/
+.topics {
+  padding-bottom: 80px;
+}
+@media screen and (min-width: 600px) {
+  .topics {
+    margin-top: 70px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .topics {
+    padding-bottom: 120px;
+  }
+}
+
+.topics-info {
+  border-bottom: 1px solid var(--color-gray-02);
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+}
+.topics-info .topics__date {
+  font-size: 1rem;
+}
+
+.topics__title {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.topics-content p,
+.topics-content img {
+  margin-bottom: 20px;
+}
