@@ -6,15 +6,15 @@ https://nagashun.com/works/works01/
 ID：test  
 PW：testtest  
 
-*【概要】*  
+【概要】  
 https://nagashun.studio.site/works/digsmile  
 
-*【WordPress】*  
+【WordPress】  
 カスタム投稿タイプ  
 カスタムフィールド（ACF / SCF）  
 Contact Form7  
 
-*【WordPressプラグイン】*  
+【WordPressプラグイン】  
 Adminimize  
 Advanced Custom Fields  
 All-in-One WP Migration  
@@ -30,15 +30,15 @@ WP-PageNavi
 Yoast Duplicate Post  
 Yoast SEO  
 
-*【設計】*  
+【設計】  
 BEM、FLOUベースの記法  
 SCSS（Dart Sass）  
 
-*【開発ツール】*  
+【開発ツール】  
 Visual Studio Code  
 Prepros（ライブプレビュー、SCSSコンパイル、画像圧縮）  
 FileZilla  
 SourceTree  
 
-*【その他】*  
+【その他】  
 独自ドメイン  
